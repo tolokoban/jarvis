@@ -1,0 +1,70 @@
+{
+    "name": "ai-background",
+    "version": "0.1.0",
+    "private": true,
+    "sideEffects": [
+        "*.css"
+    ],
+    "homepage": "./",
+    "dependencies": {
+        "@tolokoban/react-state": "^0.8.0",
+        "@tolokoban/tgd": "^2.5.0",
+        "@tolokoban/ui": "^0.25.8",
+        "build-react-routes": "^0.11.1",
+        "json5": "^2.2.3",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "react-markdown": "^10.1.0"
+    },
+    "scripts": {
+        "generate": "npm run routes",
+        "routes": "build-react-routes ./src/app",
+        "analyse": "webpack --profile --json > stats.json",
+        "start": "rspack --mode=development --watch",
+        "build": "rspack --mode=production",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "format": "oxfmt",
+        "lint": "oxlint",
+        "test": "jest",
+        "test:watch": "jest --watch"
+    },
+    "eslintConfig": {},
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@rspack/cli": "^2.2.2",
+        "@rspack/core": "^2.2.2",
+        "@tolokoban/bill": "^0.1.0",
+        "@tolokoban/type-guards": "^0.9.0",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.4",
+        "clean-webpack-plugin": "^4.0.0",
+        "css-loader": "^7.1.4",
+        "gh-pages": "^6.3.0",
+        "highlight.js": "^11.12.0",
+        "jest": "^30.5.1",
+        "oxfmt": "^0.66.0",
+        "oxlint": "^1.81.0",
+        "rehype-highlight": "^7.0.2",
+        "rehype-highlight-code-lines": "^1.2.5",
+        "remark-emoji": "^5.0.2",
+        "remark-gfm": "^4.0.1",
+        "remark-images": "^4.1.0",
+        "ts-jest": "^29.4.12",
+        "ts-loader": "^9.6.2",
+        "typescript": "^5.9.3",
+        "webpack-shell-plugin-next": "^2.3.3",
+        "workbox-webpack-plugin": "^7.4.1"
+    }
+}

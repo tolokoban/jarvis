@@ -1,0 +1,12 @@
+{
+    "name": "ai-background",
+    "version": "0.1.0",
+    "private": true,
+    "sideEffects": [
+        "*.css"
+    ],
+    "homepage": "./",
+    "scripts": {
+        "start": "./jarvis/jarvis.sh"
+    }
+}

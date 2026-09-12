@@ -1,0 +1,26 @@
+name: jarvis-backend
+
+services:
+  backend:
+    build: .
+    ports:
+      # HOST_PORT lets callers (e.g. jarvis/jarvis.sh) map the container's
+      # webserver to an arbitrary free port on the host; defaults to 8000
+      # for plain `docker compose up`.
+      - "${HOST_PORT:-8000}:8000"
+    volumes:
+      # The whole model/ directory is mounted (it can hold several
+      # downloaded models, one per subfolder); MODEL_NAME picks which one
+      # MODEL_PATH below points at.
+      - ./model:/app/model:ro
+      # Bind-mount the frontend build straight from the host instead of
+      # relying on the image's COPY'd copy (Dockerfile), so re-running
+      # `npm run build` in frontend/ is picked up immediately by the
+      # already-running container — StaticFiles reads files from disk on
+      # every request, so no backend restart is needed.
+      - ./www:/app/www:ro
+    environment:
+      MODEL_PATH: /app/model/${MODEL_NAME:-Qwen2.5-3B-Instruct}
+      # MAX_NEW_TOKENS: "1024"
+      # SYSTEM_PROMPT: "You are a helpful assistant."
+    gpus: all

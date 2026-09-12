@@ -1,0 +1,11 @@
+div.response {
+    margin: 1em;
+    padding: 1em;
+    border-radius: .5em;
+    width: 100%;
+    height: calc(100vh - 200px);
+    max-height: calc(100vh - 200px);
+    overflow: auto;
+    background-color: var(--theme-color-neutral-5);
+    color: var(--theme-color-on-neutral-5);
+}

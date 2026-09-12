@@ -1,0 +1,7 @@
+model/*
+!model/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+www/*
+!www/.gitkeep
